@@ -14,7 +14,7 @@ app.use("/furnitures", furnitureController);
 
 
 
-const PORT = process.env.PORT || 1234;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, async () => {
   try {
@@ -22,5 +22,5 @@ app.listen(PORT, async () => {
   } catch (err) {
     console.error(err.message);
   }
-  console.log("listening on port 1234");
+  console.log(`listening on port ${PORT}`);
 });

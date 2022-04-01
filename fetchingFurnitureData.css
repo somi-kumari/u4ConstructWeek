@@ -1,0 +1,15 @@
+#users_div{
+
+    display:grid;
+    grid-template-columns: repeat(4, 30%);
+    
+
+    
+}
+#users_div img{
+    width: 50%;
+    height:30%
+   
+
+    
+}
