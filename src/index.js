@@ -1,16 +1,22 @@
 const express = require("express");
 var cors = require("cors");
 const connect = require("./configs/db");
-
-const furnitureController = require("./controllers/furnitures.controller");
-
 const app = express();
+app.use(cors({ origin: "*" }));
+
+app.use(express.json());
+const furnitureController = require("./controllers/furnitures.controller");
+const lightingController = require("./controllers/lighting.controller");
+const pillowController = require("./controllers/pillow.controller");
+
 app.use(cors({ origin: "*" }));
 
 app.use(express.json());
 
 
 app.use("/furnitures", furnitureController);
+app.use("/lighting", lightingController);
+app.use("/pillow", pillowController);
 
 
 

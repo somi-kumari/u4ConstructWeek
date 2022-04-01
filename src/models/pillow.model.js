@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-const furnitureSchema = new mongoose.Schema(
+const pillowSchema = new mongoose.Schema(
   {
     img_url: { type: String, required: true },
     title: { type: String, required: true },
@@ -14,4 +14,4 @@ const furnitureSchema = new mongoose.Schema(
 );
 
 
-module.exports = mongoose.model("furnitures", furnitureSchema);
+module.exports = mongoose.model("pillows", pillowSchema);
