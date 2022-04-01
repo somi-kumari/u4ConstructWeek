@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CB2productDetailsFurniture</title>
+</head>
+<body>
+    <div id="users_div">
+
+    </div>
+</body>
+</html>
+<script>
+    let url = "http://localhost:1234/furnitures";
+    let responce = []
+
+    async function getusers() {
+
+    try {
+    let res = await fetch(url);
+     responce = await res.json();
+    // console.log(responce)
+    appendusers(responce)
+    
+    } catch (err) {
+    console.log(err)
+}
+
+}
+
+getusers();
+
+    let cartArr =JSON.parse(localStorage.getItem("cartitem")) || [];
+
+    appendusers(responce) 
+    
+    function appendusers(responce) {
+        responce.forEach(function(product) {
+            let img = document.createElement("img");
+            img.src = product.img_url;
+
+            let name = document.createElement("p");
+            name.innerText = product.title;
+
+         
+
+            let price = document.createElement("h4");
+            price.setAttribute("id",price)
+            price.innerText = product.price;
+
+          
+
+            let div = document.createElement("div");
+            div.append(img, name, price )
+
+            users_div.append(div)
+        })
+    }
+
+    // function addtocart(product){
+    //     cartArr.push(product)
+    //     console.log(cartArr)
+    //     localStorage.setItem("cartitem", JSON.stringify(cartArr))
+    // }
+</script>
